@@ -2,12 +2,12 @@ import airfoilreader as ar
 import os
 import matplotlib.pyplot as plt
 
-file = os.getcwd() + '/sd7037.dat'
+file = os.getcwd() + '/hs1606.dat'
 
 reader = ar.airfoilReader(file)
 reader.read()
 
-reader.output(format='seperate')
+reader.output(format='merged')
 
 resultdict = reader.getresults()
 

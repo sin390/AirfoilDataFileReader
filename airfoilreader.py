@@ -169,7 +169,7 @@ class airfoilReader():
             savepath = self.outputpath
         with open(savepath, 'w') as file:
             for tmp_i in range(len(self.statementtext)):
-                file.write(f'{' '.join(self.statementtext[tmp_i])}\n')
+                file.write(f'{''.join(self.statementtext[tmp_i])}\n')
             
             if format == 'merged':
                 self.__arrange('upper', True)

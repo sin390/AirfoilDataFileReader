@@ -9,7 +9,9 @@ reader.read()
 
 reader.output(format='seperate')
 
-plt.plot(reader.results['upper_x'],reader.results['upper_y'],'r')
-plt.plot(reader.results['lower_x'],reader.results['lower_y'],'b')
+resultdict = reader.getresults()
+
+plt.plot(resultdict['upper_x'],resultdict['upper_y'],'r')
+plt.plot(resultdict['lower_x'],resultdict['lower_y'],'b')
 plt.axis('equal')
 plt.show()

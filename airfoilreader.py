@@ -161,7 +161,7 @@ class airfoilReader():
         tmp_y = self.results[f'{wing}_y']
         zipped_list = zip(tmp_x,tmp_y)
         sorted_list = sorted(zipped_list, key=lambda x:(x[0]), reverse = ifdescending)
-        self.results[f'{wing}_x'], self.results[f'{wing}_y'] = zip(*sorted_list)
+        self.results[f'{wing}_x'], self.results[f'{wing}_y'] = [list(item) for item in zip(*sorted_list)]
     
     def output(self, savepath:str = 'default', format:str = 'merged'):
         assert format in ('merged', 'seperate')

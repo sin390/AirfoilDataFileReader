@@ -1,3 +1,10 @@
+'''
+=========================
+= Author:   Han Zexu    =
+= Version:  1.0         =
+= Date:     2024/01/22  =
+=========================
+'''
 import airfoilreader as ar
 import os
 import matplotlib.pyplot as plt

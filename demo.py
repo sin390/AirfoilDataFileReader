@@ -9,8 +9,7 @@ import airfoilreader as ar
 import os
 import matplotlib.pyplot as plt
 
-file = f'{__file__}/refAirfoils/hs1606.dat'
-
+file = f'{os.path.dirname(__file__)}/refAirfoils/hs1606.dat'
 reader = ar.AirfoilReader(file, outputpath="./")
 reader.read()
 resultdict = reader.getresults()

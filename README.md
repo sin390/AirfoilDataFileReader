@@ -5,7 +5,7 @@ A python module to handle an airfoil data file. It can parse the statement heade
 Two kinds of format in airfoil '.dat' file are considered, those are:
 
 + i. `seperate` type, it looks like:
-  
+
   ```
     # Some statement words (header part)
     #
@@ -19,9 +19,8 @@ Two kinds of format in airfoil '.dat' file are considered, those are:
     #      ...    ...
     #     1.000 -0.001
   ```
-
 + ii. `merged` type, it looks like:
-  
+
   ```
     # Some statement words (header part)
     #
@@ -35,8 +34,8 @@ Two kinds of format in airfoil '.dat' file are considered, those are:
     #     0.995  0.001
     #     1.000 -0.001
   ```
-  
-A airfoil data file in either of above two formats could be handled by this module. 
+
+A airfoil data file in either of above two formats could be handled by this module.
 
 For the example, please refer to [Quick start](#demo).
 
@@ -60,7 +59,7 @@ import airfoilreader as ar
 import os
 import matplotlib.pyplot as plt
 
-file = f'{__file__}/refAirfoils/hs1606.dat'
+file = f'{os.path.dirname(__file__)}/refAirfoils/hs1606.dat'
 
 reader = ar.AirfoilReader(file, outputpath="./")
 reader.read()

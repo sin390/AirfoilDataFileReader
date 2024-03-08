@@ -47,18 +47,18 @@ For the typical example, please refer to the file 'demo.py'.
 
 class AirfoilReader():
     def __init__(self, file:str, outputpath:str = f'./'):
-        results = {'upper_x':[],
+        self.results = {'upper_x':[],
                    'upper_y':[],
                    'lower_x':[],
                    'lower_y':[]}
-        statementtext = []
-        filepath = file
-        ifAvailable = False
+        self.statementtext = []
+        self.filepath = file
+        self.ifAvailable = False
 
         # as to output the rearranged airfoil.
-        file_name = os.path.basename(filepath)
-        file_name = os.path.splitext(file_name)[0]    
-        output = outputpath + f'./{file_name}_Rearranged.dat'
+        self.file_name = os.path.basename(self.filepath)
+        self.file_name = os.path.splitext(self.file_name)[0]    
+        self.output = outputpath + f'./{self.file_name}_Rearranged.dat'
     
     def read(self) -> bool:
         if os.path.exists(self.filepath) == False:
@@ -175,18 +175,18 @@ class AirfoilReader():
                 self.__arrange('upper', True)
                 self.__arrange('lower', False)              
                 for tmp_i in range(len(self.results['upper_x'])-1):
-                    file.write(f'{self.results['upper_x'][tmp_i]:>12.8f}{self.results['upper_y'][tmp_i]:>12.8f}\n')
+                    file.write(f"{self.results['upper_x'][tmp_i]:>12.8f}{self.results['upper_y'][tmp_i]:>12.8f}\n")
                 for tmp_i in range(len(self.results['lower_x'])):
-                    file.write(f'{self.results['lower_x'][tmp_i]:>12.8f}{self.results['lower_y'][tmp_i]:>12.8f}\n')  
+                    file.write(f"{self.results['lower_x'][tmp_i]:>12.8f}{self.results['lower_y'][tmp_i]:>12.8f}\n")  
             
             else:
                 self.__arrange('upper', False)
                 self.__arrange('lower', False)
                 for tmp_i in range(len(self.results['upper_x'])):
-                    file.write(f'{self.results['upper_x'][tmp_i]:>12.8f}{self.results['upper_y'][tmp_i]:>12.8f}\n')
+                    file.write(f"{self.results['upper_x'][tmp_i]:>12.8f}{self.results['upper_y'][tmp_i]:>12.8f}\n")
                 file.write('\n')    
                 for tmp_i in range(len(self.results['lower_x'])):
-                    file.write(f'{self.results['lower_x'][tmp_i]:>12.8f}{self.results['lower_y'][tmp_i]:>12.8f}\n')                                
+                    file.write(f"{self.results['lower_x'][tmp_i]:>12.8f}{self.results['lower_y'][tmp_i]:>12.8f}\n")                                
 
 if __name__ == '__main__':
     cwd = os.path.split(os.path.realpath(__file__))[0]

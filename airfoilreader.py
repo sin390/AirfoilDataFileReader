@@ -5,7 +5,7 @@ import os
 It could sort the statement header, the points in the upper and lower wing,
 into the basic data type in python, the list.
 
-The test files were downloaded from UIUC Airfoil Coordinates Database.
+The test files in /refAirfoils were downloaded from UIUC Airfoil Coordinates Database.
 (https://m-selig.ae.illinois.edu/ads/coord_database.html)
 
 It is assumed that there are two kinds of format in airfoil '.dat' file, those are:
@@ -45,24 +45,24 @@ For the typical example, please refer to the file 'demo.py'.
 =========================
 '''
 
-class airfoilReader():
-    results = {'upper_x':[],
-               'upper_y':[],
-               'lower_x':[],
-               'lower_y':[]}
-    statementtext = []
-    filepath = ''
-    outputpath = './RearrangedDataset.dat'    
-    ifAvailable = False
+class AirfoilReader():
+    def __init__(self, file:str, outputpath:str = f'./'):
+        results = {'upper_x':[],
+                   'upper_y':[],
+                   'lower_x':[],
+                   'lower_y':[]}
+        statementtext = []
+        filepath = file
+        ifAvailable = False
 
-    def __init__(self, file:str):
-        self.filepath = file
-        file_name = os.path.basename(file)
-        file_name = os.path.splitext(file_name)[0]
-        self.outputpath = f'./{file_name}_Rearranged.dat'
+        # as to output the rearranged airfoil.
+        file_name = os.path.basename(filepath)
+        file_name = os.path.splitext(file_name)[0]    
+        output = outputpath + f'./{file_name}_Rearranged.dat'
     
     def read(self) -> bool:
         if os.path.exists(self.filepath) == False:
+            print("AirfoilReader cannot find the target data file.")
             return False
         
         def iffloat(data:str):

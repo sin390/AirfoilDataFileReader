@@ -1,8 +1,6 @@
 # AirfoilReader
 
-A python module to handle an airfoil data file.
-
-It can parse the statement header, the points in the upper and lower wing.
+A python module to handle an airfoil data file. It can parse the statement header, the points in the upper and lower wing.
 
 Two kinds of format in airfoil '.dat' file are considered, those are:
 

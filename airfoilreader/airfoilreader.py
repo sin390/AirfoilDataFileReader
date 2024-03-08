@@ -149,9 +149,9 @@ class AirfoilReader():
         self.__arrange('upper')
         self.__arrange('lower')                
 
-    def getresults(self) -> dict:
-        self.__arrange('upper')
-        self.__arrange('lower')  
+    def getresults(self, ifdescending_upper:bool = False, ifdescending_lower:bool = False) -> dict:
+        self.__arrange('upper', ifdescending_upper)
+        self.__arrange('lower', ifdescending_lower)  
         return self.results
 
     def __arrange(self,wing:str ='', ifdescending:bool = False):

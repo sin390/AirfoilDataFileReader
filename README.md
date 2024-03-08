@@ -36,7 +36,7 @@ Two kinds of format in airfoil '.dat' file are considered, those are:
     #     1.000 -0.001
   ```
   
-  A airfoil data file in either of above two formats could be handled by this module. 
+A airfoil data file in either of above two formats could be handled by this module. 
 
 For the example, please refer to [Quick start](#demo).
 
@@ -53,7 +53,7 @@ pip install git+https://github.com/sin390/AirfoilReader.git
 
 ### Quick start <a id="demo"></a>
 
-As the `demo.py` file, one can handle an airfoil file like this...
+As the `demo.py` file shown, one can handle an airfoil file like this...
 
 ```python
 import airfoilreader as ar

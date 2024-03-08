@@ -4,7 +4,7 @@ A python module to handle an airfoil data file.
 
 It can parse the statement header, the points in the upper and lower wing.
 
-There are two kinds of format in airfoil '.dat' file considered, those are:
+Two kinds of format in airfoil '.dat' file are considered, those are:
 
 + i. `seperate` type, it looks like:
   
